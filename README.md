@@ -23,3 +23,8 @@ F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
 
 Given how our p value is 5.35e-11 (0.0000000000535) which is very close to zero, it's fair to say we can reject a null hypothesis, and that our data is statistically significant. This means our intercepts are directly affected by mpg, so further analysis can be conducted.
 
+## Summary Statistics on Suspension Coils
+
+
+
+
