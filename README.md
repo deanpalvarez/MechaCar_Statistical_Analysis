@@ -31,6 +31,7 @@ We were told the suspension coil variance for these vehicles should not exceed 1
 ## T-Tests on Suspension Coils
 Multiple t-tests were ran for both all 3 lots as a whole, as well as each of them individually:
 ```
+# All vehichile lots
 > t.test((sus_coil$PSI), mu=1500)
 
 	One Sample t-test
@@ -43,6 +44,8 @@ alternative hypothesis: true mean is not equal to 1500
 sample estimates:
 mean of x 
   1498.78 
+  
+ # lot 1:
 
 > lot1 <- subset(sus_coil, Manufacturing_Lot=='Lot1') 
 > t.test(x=lot1$PSI, mu=1500) 
@@ -57,6 +60,8 @@ alternative hypothesis: true mean is not equal to 1500
 sample estimates:
 mean of x 
      1500 
+     
+# Lot 2:
 
 > lot2 <- subset(sus_coil, Manufacturing_Lot=='Lot2') 
 > t.test(x=lot2$PSI, mu=1500) 
@@ -71,6 +76,8 @@ alternative hypothesis: true mean is not equal to 1500
 sample estimates:
 mean of x 
    1500.2 
+   
+# Lot 3:
 
 > lot3 <- subset(sus_coil, Manufacturing_Lot=='Lot3') 
 > t.test(x=lot3$PSI, mu=1500) 
@@ -86,7 +93,12 @@ sample estimates:
 mean of x 
   1496.14
   ```
-  
+By simply running some code in R, analyses/hypothesis' are able to be generated automatically for us. Given the amount of data, and how each p-value is close to or equal to 1, it's fair to quote the output of our R code, and that the true mean of the PSI data is not exactly 1500. This means further testing/analysis may need to be done, as it may affect quality/safety among other factors for the company.
+
+
+## Study Design: MechaCar vs Competition
+
+In order to conduct analysis to compare to the companies competition, other factors are definitley worth considering. Fuel efficiency, horse power, maintenance cost, etc. are all important, and can be analyzed with the tools we used for PSI data. Above we see how much analysis can be done soley on a series of car lots, just for PSI levels. An example could be vehicle cost in relation to mpg (which are both assumably available information) and the null hypothesis being that they aren't directly correlated. By importing a database with this information (the larger the better) accurate p values/t tests can be generated much like done in this assignment, and can be refactored to include other variables like vehicle size, year, and even PSI. Mpg in relation to cost would be relevant to analyze, as fuel efficiency is an important consideration for consumers. Analytics using R in this manner is both relevant for safety of vehicles, business strategy, and overall company profit.
 
 
 
